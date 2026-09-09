@@ -38,3 +38,4 @@
   transform: translate(-50%, -50%) rotate(-45deg) !important;
 }
 @media(max-width:900px){.risk-world-map{height:62vw !important;min-height:280px !important}}
+.risk-year-section{max-width:1450px;margin:0 auto 30px}.risk-year-section .section-head{margin:0 0 14px}.risk-year-section .section-head h2{margin:0;color:#071A3D;font-size:30px}.risk-year-section .section-head p{margin:6px 0 0;color:#64748b;font-weight:650}.risk-year-grid{display:flex;gap:12px;overflow-x:auto;padding:2px 2px 10px}.risk-year-card{flex:0 0 145px;background:#fff;border:1px solid #d9e2ee;border-radius:16px;padding:17px 18px;box-shadow:0 10px 24px rgba(16,24,32,.07)}.risk-year-card strong{display:block;color:#0038A8;font-size:32px;line-height:1}.risk-year-card span{display:block;margin-top:8px;color:#071A3D;font-size:20px;font-weight:900}.risk-year-card small{display:block;margin-top:2px;color:#64748b;font-weight:700}@media(max-width:900px){.risk-year-card{flex-basis:122px;padding:14px}}
