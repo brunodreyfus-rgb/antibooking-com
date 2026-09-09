@@ -6,6 +6,7 @@ function siteHeader(current = "") {
     ["Risk Map", "/pages/country-risk.html"],
     ["Methodology", "/pages/methodology.html"],
     ["Artists", "/pages/artists.html"],
+    ["They Talk About Us", "/pages/media.html"],
     ["Partners", "/pages/partners.html"],
     ["Admin", "/pages/admin.html"]
   ];
@@ -239,6 +240,8 @@ function getCurrentNavLabel() {
   if (path.includes("search")) return "Search";
   if (path.includes("risks")) return "Risks";
   if (path.includes("methodology")) return "Methodology";
+  if (path.includes("artists")) return "Artists";
+  if (path.includes("media")) return "They Talk About Us";
   if (path.includes("partners")) return "Partners";
   if (path.includes("admin")) return "Admin";
   return "Home";

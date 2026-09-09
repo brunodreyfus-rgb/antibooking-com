@@ -16,6 +16,24 @@ function renderRiskSummary(rows, countries) {
   `;
 }
 
+function renderIncidentsByYear(rows) {
+  const grid = document.getElementById("riskYearGrid");
+  if (!grid) return;
+  const counts = {};
+  rows.forEach(row => {
+    const rawDate = row.incident_date || row.created_at;
+    if (!rawDate) return;
+    const date = new Date(rawDate);
+    if (Number.isNaN(date.getTime())) return;
+    const year = date.getFullYear();
+    counts[year] = (counts[year] || 0) + 1;
+  });
+  const years = Object.entries(counts).sort((a,b) => Number(b[0]) - Number(a[0]));
+  grid.innerHTML = years.length ? years.map(([year,total]) => `
+    <div class="risk-year-card"><strong>${total}</strong><span>${year}</span><small>incident${total === 1 ? "" : "s"}</small></div>
+  `).join("") : '<p class="risk-year-empty">No dated incidents available.</p>';
+}
+
 function renderRiskMap(countries) {
   const map = document.getElementById("riskWorldMap");
   if (!map || !window.JookingRiskMap) return;
@@ -69,6 +87,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const countries = window.JookingRiskMap.groupCountries(rows);
 
     renderRiskSummary(rows, countries);
+    renderIncidentsByYear(rows);
     renderRiskMap(countries);
     renderCountryCards(countries);
 
